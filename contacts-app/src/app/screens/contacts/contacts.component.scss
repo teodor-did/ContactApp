@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    height: calc(100vh - 112px);
+    padding:24px;
+    flex-direction: column;
+}
+
+.toolbar-class{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    background-color: rgb(32, 48, 99) !important;
+    color:white !important;
+}
+
+.action-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.full-width{
+    width:100%;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }

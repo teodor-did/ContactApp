@@ -1,0 +1,55 @@
+<div class="dialog-ct">
+  <h2>{{title}}</h2>
+  <form class="form-group" [formGroup]="contactForm">
+    <mat-form-field class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" formControlName="firstName" class="form-control" minlength="6" />
+      <mat-error *ngIf="contactForm.get('firstName').hasError('required')">
+        First Name is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('firstName').hasError('minlength')">
+        First Name must be at least 6 characters!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" formControlName="lastName" class="form-control" minlength="6" />
+      <mat-error *ngIf="contactForm.get('lastName').hasError('required')">
+        Last Name is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('lastName').hasError('minlength')">
+        Last Name must be at least 6 characters!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Phone No</mat-label>
+      <input matInput type="text" formControlName="phoneNumber" class="form-control" />
+      <mat-error *ngIf="contactForm.get('phoneNumber').hasError('required')">
+        Phone No. is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('phoneNumber').hasError('pattern')">
+        Phone No. is <strong>invalid</strong> (must start with '0' and have 10 digits)
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" formControlName="email" class="form-control" />
+      <mat-error *ngIf="contactForm.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email').hasError('pattern')">
+        Email is <strong>invalid</strong>
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+
+  <div class="action-footer">
+    <button mat-raised-button (click)="onClose()" color="warn">Cancel</button>
+    <button mat-raised-button (click)="onSave()" [disabled]="contactForm.invalid" class="submit-btn"
+      color="primary">Save</button>
+  </div>
+</div>

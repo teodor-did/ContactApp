@@ -1,0 +1,24 @@
+.dialog-ct{
+    display: flex;
+    width:500px;
+    flex-direction: column;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+}
+.action-footer{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-top:12px;
+}
+
+.full-width{
+    width:100%;
+}

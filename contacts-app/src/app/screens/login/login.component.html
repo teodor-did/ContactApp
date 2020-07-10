@@ -1,0 +1,32 @@
+<mat-toolbar class="toolbar-color">Login</mat-toolbar>
+<div class="container">
+    <div class="login-form mat-elevation-z1">
+        <form class="form-group" [formGroup]="loginForm">
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email" class="form-control" />
+                <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email').hasError('pattern')">
+                    Email is <strong>invalid</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" [type]="hide ? 'text' : 'password'"
+                    minlength="6" />
+                <mat-icon matSuffix (click)="hide = !hide" class="pointer-enabled">
+                    {{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+                    Password must be at least 6 characters!
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button class="submit-btn" [disabled]="loginForm.invalid" color="primary"
+                (click)="onLogin()">Login</button>
+        </form>
+    </div>
+</div>

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   /* Authentication data */
   user = {
-    email: 'teo@doitdev.ro',
+    email: 'teodor.potec@gmail.ro',
     password: 'administrator'
   }
 

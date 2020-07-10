@@ -3,5 +3,5 @@
 npm i - required
 
 Autentification credentials:
-email: teo@doitdev.ro
+email: teodor.potec@gmail.ro
 password: administrator
